@@ -3,9 +3,7 @@ vue-picture-preview
 
 移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.
 
-![img](http://xlogic.me/demo/vue-picture-preview-1.png)
-![img](http://xlogic.me/demo/vue-picture-preview-2.png)
-![img](http://xlogic.me/demo/vue-picture-preview-3.png)
+![img](https://github.com/xlogic92/vue-picture-preview/blob/master/demo.gif)
 
 ## 安装
 
