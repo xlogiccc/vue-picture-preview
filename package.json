@@ -1,0 +1,26 @@
+{
+  "name": "vue-picture-preview",
+  "version": "0.0.1",
+  "description": "移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xLogic92/vue-picture-preview.git"
+  },
+  "keywords": [
+    "Vue",
+    "Plugin",
+    "Picture",
+    "Img",
+    "Preview"
+  ],
+  "author": "xLogic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xLogic92/vue-picture-preview/issues"
+  },
+  "homepage": "https://github.com/xLogic92/vue-picture-preview#readme"
+}
