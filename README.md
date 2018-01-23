@@ -63,6 +63,15 @@ export default {
 }
 ```
 
+```css
+<style scoped>
+img {
+   width: 100%;
+   height: 100%;
+}
+</style>
+```
+
 ## API
 
 - **isTitleEnable**: (boolean, optional) 设置 *preview-title-enable="false"* 将禁用底部标题. 默认值: true.
