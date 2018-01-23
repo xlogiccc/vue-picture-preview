@@ -35,14 +35,29 @@ Vue.use(vuePicturePreview)
 对于所有图片都可以使用 v-preview 指令来绑定他们的预览功能
 
 ```HTML
-<img v-for="img in imgs" v-preview="img" :src="img">
+<img v-for="(img,index) in imgs" 
+     v-preview="img.url" 
+     :src="img.url" 
+     :alt="img.title" 
+     :key="index"
+     preview-title-enable="true"
+     preview-nav-enable="true">
 ```
 
 ```javascript
 export default {
     data () {
         return {
-            imgs: ['http://covteam.u.qiniudn.com/ka2.jpg', 'http://covteam.u.qiniudn.com/poster.png']
+            imgs: [
+                {
+                  url: 'http://covteam.u.qiniudn.com/ka2.jpg',
+                  title: 'pic1'
+                },
+                {
+                  url: 'http://covteam.u.qiniudn.com/poster.png',
+                  title: 'pic2'
+                }
+            ]
         }
     }
 }
@@ -50,5 +65,5 @@ export default {
 
 ## API
 
-- **isTitleEnable**: (boolean, optional) 设置 *isTitleEnable="false"* 将禁用水平导航. 默认值: true.
-- **isHorizontalNavEnable**: (boolean, optional) 设置 *isHorizontalNavEnable="false"* 将禁用底部标题. 默认值: true.
+- **isTitleEnable**: (boolean, optional) 设置 *preview-title-enable="false"* 将禁用底部标题. 默认值: true.
+- **isHorizontalNavEnable**: (boolean, optional) 设置 *preview-nav-enable="false"* 将禁用水平导航. 默认值: true.
