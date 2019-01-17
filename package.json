@@ -1,5 +1,5 @@
 {
-  "name": "vue-picture-preview",
+  "name": "vue-picture-preview-fix",
   "version": "1.2.0",
   "description": "移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "Img",
     "Preview"
   ],
-  "author": "xLogic",
+  "author": "xLogic,Mainyf",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xLogic92/vue-picture-preview/issues"

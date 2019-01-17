@@ -50,12 +50,12 @@ export default {
         }
 
         Vue.directive('preview', {
-            bind: function (el) {
+            bind: function (el, binding) {
                 var previewItem = {
                     title: '',
                     el: el,
                     index: 0,
-                    src: ''
+                    src: binding.value || ''
                 }
                 LOGIC_EVENT_BUS.LOGIC_PREVIEW.list.push(previewItem)
                 updateIndex(LOGIC_EVENT_BUS.LOGIC_PREVIEW.list)
