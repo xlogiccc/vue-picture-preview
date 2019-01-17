@@ -1,5 +1,6 @@
-vue-picture-preview
+vue-picture-preview-fix
 =============
+PS: fix src load error. 
 
 移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.
 
@@ -14,14 +15,14 @@ vue-picture-preview
 ### NPM
 
 ```sh
-npm install --save vue-picture-preview
+npm install --save vue-picture-preview-fix
 ```
 
 ## 使用
 首先在项目的入口文件中引入, 调用 Vue.use 安装。
 
 ```javascript
-import vuePicturePreview from 'vue-picture-preview'
+import vuePicturePreview from 'vue-picture-preview-fix'
 Vue.use(vuePicturePreview)
 ```
 
