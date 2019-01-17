@@ -1,6 +1,6 @@
 {
   "name": "vue-picture-preview-fix",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.",
   "main": "index.js",
   "scripts": {
