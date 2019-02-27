@@ -1,0 +1,34 @@
+{
+  "extends": "standard",
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "amd": true
+  },
+  "plugins": ["html", "vue", "standard"],
+  "rules": {
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "no-debugger": ["error"],
+    "no-console": ["off"],
+    "no-undef":["error"],
+    "no-useless-escape":["off"],
+    "no-unused-vars":["error"],
+    "no-new": ["off"],
+    "no-extend-native": ["off"],
+    "space-before-function-paren": [0, "always"],
+    "camelcase": ["off"],
+    "eqeqeq":["off"],
+    "vue/jsx-uses-vars": 2
+  }
+}

@@ -13,10 +13,10 @@
                 {{preview.current.title}}
             </div>
             <div class="lg-preview-nav-left" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
-                <span class="lg-preview-nav-arrow" @click="preAction" ></span>
+                <span class="lg-preview-nav-arrow" @click.stop="preAction" ></span>
             </div>
             <div class="lg-preview-nav-right" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
-                <span class="lg-preview-nav-arrow" @click="nextAction"></span>
+                <span class="lg-preview-nav-arrow" @click.stop="nextAction"></span>
             </div>
         </div>
     </transition>
@@ -27,50 +27,50 @@ export default {
     name: 'Preview',
     computed: {
         preview () {
-            return window.LOGIC_EVENT_BUS.LOGIC_PREVIEW
+            return window.LOGIC_EVENT_BUS.LOGIC_PREVIEW;
         }
     },
     methods: {
         leave (e) {
-            if ((this.preview.show)&&(e.target.className.indexOf('lg-preview-nav-arrow') != 0)){
-               this.close()
+            if ((this.preview.show)&&(e.target.className.indexOf('lg-preview-nav-arrow') !== 0)){
+               this.close();
             }
         },
         close () {
-            this.preview.show = false
+            this.preview.show = false;
         },
         preAction () {
-            this.preview.loading = true
-            var index = this.preview.list.indexOf(this.preview.current)
+            this.preview.loading = true;
+            var index = this.preview.list.indexOf(this.preview.current);
             if (index === 0) {
-                this.preview.loading = false
-                return
+                this.preview.loading = false;
+                return;
             }
-            index--
-            this.preview.current = this.preview.list[index]
-            const img = new window.Image()
-            img.src = this.preview.current.src
+            index--;
+            this.preview.current = this.preview.list[index];
+            var img = new window.Image();
+            img.src = this.preview.current.src;
             img.onload = function () {
                 setTimeout(function () {
-                    LOGIC_EVENT_BUS.LOGIC_PREVIEW.loading = false
-                },500)
+                    LOGIC_EVENT_BUS.LOGIC_PREVIEW.loading = false;
+                }, 500);
             }
         },
         nextAction () {
-            this.preview.loading = true
-            var index = this.preview.list.indexOf(this.preview.current)
+            this.preview.loading = true;
+            var index = this.preview.list.indexOf(this.preview.current);
             if (index === this.preview.list.length - 1) {
-                this.preview.loading = false
-                return
+                this.preview.loading = false;
+                return;
             }
-            index++
-            this.preview.current = this.preview.list[index]
-            const img = new window.Image()
-            img.src = this.preview.current.src
+            index++;
+            this.preview.current = this.preview.list[index];
+            var img = new window.Image();
+            img.src = this.preview.current.src;
             img.onload = function () {
                 setTimeout(function () {
-                    LOGIC_EVENT_BUS.LOGIC_PREVIEW.loading = false
-                },500)
+                    LOGIC_EVENT_BUS.LOGIC_PREVIEW.loading = false;
+                }, 500);
             }
         },
     }

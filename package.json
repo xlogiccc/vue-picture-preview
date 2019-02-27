@@ -1,9 +1,10 @@
 {
   "name": "vue-picture-preview",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "移动端Vue.js图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.",
-  "main": "index.js",
+  "main": "dist/vue-picture-preview.js",
   "scripts": {
+    "build": "node build.js",
     "test": "npm run unit"
   },
   "repository": {
@@ -22,5 +23,16 @@
   "bugs": {
     "url": "https://github.com/xLogic92/vue-picture-preview/issues"
   },
-  "homepage": "https://github.com/xLogic92/vue-picture-preview#readme"
+  "homepage": "https://github.com/xLogic92/vue-picture-preview#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-vue": "^4.7.2",
+    "vue-template-compiler": "^2.6.7"
+  }
 }
