@@ -1,6 +1,6 @@
 <template>
   <transition name="lg-preview-fade">
-    <div class="lg-preview-wrapper" v-show="preview.show" @click="leave" @touchmove.prevent>
+    <div class="lg-preview-wrapper" v-if="preview.show" @click="leave" @touchmove.prevent>
       <div class="lg-preview-loading" v-show="preview.loading">
         <div></div>
       </div>
@@ -26,6 +26,11 @@ export default {
   computed: {
     preview() {
       return window.LOGIC_EVENT_BUS.LOGIC_PREVIEW;
+    }
+  },
+  watch: {
+    $route () {
+      this.preview.show = false;
     }
   },
   methods: {
@@ -70,7 +75,7 @@ export default {
           window.LOGIC_EVENT_BUS.LOGIC_PREVIEW.loading = false;
         }, 500);
       };
-    },
+    }
   }
 };
 </script>
