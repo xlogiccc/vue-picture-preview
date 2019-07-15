@@ -1,45 +1,59 @@
-var rollup = require('rollup');
-var babel = require('rollup-plugin-babel');
-var uglify = require('rollup-plugin-uglify');
-var npm = require('rollup-plugin-node-resolve');
-var commonjs = require('rollup-plugin-commonjs');
-var vue = require('rollup-plugin-vue');
 
-rollup.rollup({
-    entry: 'index.js', // 打包入口文件
+/* eslint-disable */
+const rollup = require('rollup');
+const babel = require('rollup-plugin-babel');
+const eslint = require('rollup-plugin-eslint').eslint;
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+// const uglify = require('rollup-plugin-uglify');
+const postcss = require('rollup-plugin-postcss');
+const vue = require('rollup-plugin-vue');
+
+// PostCSS plugins
+const simpleVars = require('postcss-simple-vars');
+const nested = require('postcss-nested');
+const presetEnv = require('postcss-preset-env');
+const cssnano = require('cssnano');
+
+rollup
+  .rollup({
+    input: 'src/index.js', // 打包入口文件
     plugins: [
-        vue(),
-        npm({ jsnext: true, main: true }),
-        uglify(), // 压缩代码
-        commonjs(), // 支持CommonJS模块语法
-        babel({  // babel配置
-            exclude: 'node_modules/**',
-            presets: [ 'es2015-rollup' ]
-        })
+      postcss({
+        plugins: [
+          simpleVars(),
+          nested(),
+          presetEnv(),
+          cssnano({
+            autoprefixer: false,
+            'postcss-zindex': false
+          })
+        ],
+        extensions: ['.css']
+      }),
+      vue(),
+      resolve(),
+      commonjs(), // 支持CommonJS模块语法
+      eslint({
+        exclude: ['src/css/**']
+      }),
+      babel({
+        exclude: 'node_modules/**'
+      })
     ],
-    external: [ // 不被打包的库，比如在项目中会被引入
-        'vue'
+    external: [
+      // 不被打包的库，比如在项目中会被引入
+      'vue'
     ]
-}).then(function(bundle) {
+  })
+  .then(function(bundle) {
     bundle.write({
-        // output format - 'amd', 'cjs', 'es6', 'iife', 'umd'
-        // amd – 使用像requirejs一样的银木块定义
-        // cjs – CommonJS，适用于node和browserify / Webpack
-        // es6 (default) – 保持ES6的格式
-        // iife – 使用于<script> 标签引用的方式
-        // umd – 适用于CommonJs和AMD风格通用模式
-        format: 'cjs',  // 指定要打包成什么格式
-        dest: 'dist/vue-picture-preview.js' // 编译完的文件需要被存放的路径
+      format: 'cjs', // 指定要打包成什么格式
+      file: 'dist/vue-picture-preview.js' // 编译完的文件需要被存放的路径
     });
     bundle.write({
-        // output format - 'amd', 'cjs', 'es6', 'iife', 'umd'
-        // amd – 使用像requirejs一样的银木块定义
-        // cjs – CommonJS，适用于node和browserify / Webpack
-        // es6 (default) – 保持ES6的格式
-        // iife – 使用于<script> 标签引用的方式
-        // umd – 适用于CommonJs和AMD风格通用模式
-        moduleName: 'vuePicturePreview',
-        format: 'iife',  // 指定要打包成什么格式
-        dest: 'dist/vue-picture-preview.min.js' // 编译完的文件需要被存放的路径
+      name: 'vuePicturePreview',
+      format: 'iife', // 指定要打包成什么格式
+      file: 'dist/vue-picture-preview.min.js' // 编译完的文件需要被存放的路径
     });
-});
+  });
