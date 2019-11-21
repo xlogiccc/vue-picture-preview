@@ -1,6 +1,6 @@
 {
   "name": "vue-picture-preview",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "移动端、PC 端 Vue.js 图片预览插件 | Mobile-friendly picture file preview Vue.js plugin with horizontal nav and bottom title.",
   "main": "dist/vue-picture-preview.js",
   "scripts": {
