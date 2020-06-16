@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xLogic92/vue-picture-preview.git"
+    "url": "git+https://github.com/xlogiccc/vue-picture-preview.git"
   },
   "keywords": [
     "Vue",
@@ -23,9 +23,9 @@
   "author": "xLogic",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xLogic92/vue-picture-preview/issues"
+    "url": "https://github.com/xlogiccc/vue-picture-preview/issues"
   },
-  "homepage": "https://github.com/xLogic92/vue-picture-preview#readme",
+  "homepage": "https://github.com/xlogiccc/vue-picture-preview#readme",
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",

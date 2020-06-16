@@ -2,7 +2,7 @@
 
 移动端、PC 端 Vue.js 图片预览插件 | Friendly picture file preview Vue.js plugin based on PhotoSwipe.
 
-[![Github](https://img.shields.io/github/stars/xLogic92/vue-picture-preview.svg?style=social&label=Star)](https://github.com/xLogic92/vue-picture-preview) [![Github](https://img.shields.io/github/forks/xLogic92/vue-picture-preview.svg?style=social&label=Fork)](https://github.com/xLogic92/vue-picture-preview) [![Github](https://img.shields.io/github/watchers/xLogic92/vue-picture-preview.svg?style=social&label=Watch)](https://github.com/xLogic92/vue-picture-preview)
+[![Github](https://img.shields.io/github/stars/xlogiccc/vue-picture-preview.svg?style=social&label=Star)](https://github.com/xlogiccc/vue-picture-preview) [![Github](https://img.shields.io/github/forks/xlogiccc/vue-picture-preview.svg?style=social&label=Fork)](https://github.com/xlogiccc/vue-picture-preview) [![Github](https://img.shields.io/github/watchers/xlogiccc/vue-picture-preview.svg?style=social&label=Watch)](https://github.com/xlogiccc/vue-picture-preview)
 
 [![License](https://img.shields.io/npm/l/vue-picture-preview.svg?style=flat-square)](https://www.npmjs.org/package/vue-picture-preview) [![vue-picture-preview](https://img.shields.io/npm/v/vue-picture-preview.svg?style=flat-square)](https://www.npmjs.org/package/vue-picture-preview) [![NPM downloads](http://img.shields.io/npm/dm/vue-picture-preview.svg?style=flat-square)](https://npmjs.org/package/vue-picture-preview) [![NPM downloads](http://img.shields.io/npm/dt/vue-picture-preview.svg?style=flat-square)](https://npmjs.org/package/vue-picture-preview)
 
